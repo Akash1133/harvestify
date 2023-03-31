@@ -333,11 +333,9 @@ def disease_prediction():
             prediction = predict_image(img)
 
             # prediction = (str(disease_dic[prediction]))
-            response={
-                "disease":disease_classes[prediction]
-            }
+            
 
-            return jsonify(response),200
+            return jsonify(disease_classes[prediction]),200
         except:
             pass
     return render_template('disease.html', title=title)
