@@ -334,8 +334,10 @@ def disease_prediction():
 
             # prediction = (str(disease_dic[prediction]))
             
-
-            return jsonify(disease_classes[prediction]),200
+            response={
+                "disease":disease_classes[prediction]
+            }
+            return jsonify(response),200
         except:
             pass
     return render_template('disease.html', title=title)
